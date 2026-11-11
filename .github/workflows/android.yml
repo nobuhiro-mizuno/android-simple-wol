@@ -54,11 +54,14 @@ jobs:
             sleep 3
             mkdir -p preview
             adb exec-out screencap -p > preview/home.png
+            adb shell input tap 160 185
+            sleep 2
+            adb exec-out screencap -p > preview/edit.png
             if adb logcat -d -t 500 | grep -q 'FATAL EXCEPTION'; then exit 1; fi
       - name: Upload preview
         uses: actions/upload-artifact@v7
         with:
           name: wake-emulator-preview
-          path: preview/home.png
+          path: preview/*.png
           if-no-files-found: error
           retention-days: 14
