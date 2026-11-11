@@ -25,6 +25,12 @@
     <string name="choose_pc">ウィジェットの PC を選択</string>
     <string name="choose_pc_detail">このアイコンから起動する PC を選んでください。</string>
     <string name="widget_setup">設定</string>
+    <string name="widget_sending">送信中</string>
+    <string name="widget_sent">送信済</string>
+    <string name="widget_failed">失敗</string>
+    <string name="widget_sending_description">%1$s に送信中</string>
+    <string name="widget_sent_description">%1$s にマジックパケットを送信しました</string>
+    <string name="widget_failed_description">%1$s に送信できませんでした</string>
     <string name="sent">マジックパケットを送信しました</string>
     <string name="send_failed">送信できませんでした。ネットワークと設定を確認してください。</string>
     <string name="widget_name">PC 起動</string>

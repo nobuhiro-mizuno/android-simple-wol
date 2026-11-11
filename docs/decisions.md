@@ -27,3 +27,11 @@ UDP は相手からの受領応答がない。UI は「送信しました」「�
 ## D-007 継続的な確認
 
 ローカル作業環境に Android SDK がないため、GitHub Actions で毎回単体テスト・ビルド・Lint を実施し、Debug APK を保存する。エミュレーターの起動確認と画面画像も自動化する。実際の LAN と PC の電源操作は、利用者の環境で別途確認する。
+
+## D-008 ウィジェットの送信フィードバック
+
+ウィジェットを押した直後に「送信中」、UDP 送出後に「送信済」または「失敗」をアイコンとともに約 3 秒表示し、その後 PC 名に戻す。既存の短い Toast も補助として残す。通知欄への通知は Android 13 以降で実行時権限が必要となり、許可されない端末では主目的のフィードバックを保証できないため採用しない。更新は対象ウィジェットだけに行い、連続タップでは後の操作の状態を優先する。UDP の送出成功と PC の起動成功は区別する。[Android ウィジェット更新](https://developer.android.com/develop/ui/views/appwidgets/advanced)、[通知権限](https://developer.android.com/develop/ui/compose/notifications/notification-permission)。
+
+## D-009 ランチャーアイコンの形状対応
+
+Android 8 以降の適応型アイコンを使い、背景を緑の全面レイヤー、電源マークを安全領域内の前景レイヤーに分ける。丸、角丸四角、その他ランチャーのマスク形状で白い余白を出さない。テーマ適用アイコン用に単色レイヤーも用意する。[Android の適応型アイコン仕様](https://developer.android.com/develop/ui/compose/system/icon_design_adaptive)に従う。
