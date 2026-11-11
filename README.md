@@ -2,6 +2,10 @@
 
 自宅 LAN 上の PC に Wake-on-LAN マジックパケットを送る、シンプルな Android アプリです。PC の設定をアプリで管理し、PC ごとに 1 × 1 ホーム画面ウィジェットを配置できます。
 
+![アプリの初回画面](docs/screenshots/home.png)
+
+[PC 設定画面](docs/screenshots/edit.png)
+
 ## 使い方
 
 1. アプリで PC の名前、MAC アドレス、送信先 IPv4、UDP ポートを登録します。
