@@ -2,7 +2,7 @@
 
 ## 自動確認
 
-- `./gradlew testDebugUnitTest`：MAC・IPv4・ポートの検証、マジックパケットの長さと内容。
+- `./gradlew testDebugUnitTest`：MAC・IPv4・ポートの検証、マジックパケットの長さと内容、ローカル UDP 受信での送信確認。
 - `./gradlew assembleDebug`：Manifest、リソース、Java のビルド。
 - `./gradlew lintDebug`：Android 固有の静的解析。
 

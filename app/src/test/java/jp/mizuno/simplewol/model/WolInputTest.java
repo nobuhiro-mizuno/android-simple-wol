@@ -1,6 +1,9 @@
 package jp.mizuno.simplewol.model;
 
 import org.junit.Test;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import static org.junit.Assert.*;
 
 public class WolInputTest {
@@ -29,6 +32,21 @@ public class WolInputTest {
         byte[] mac = {1, 0x23, 0x45, 0x67, (byte) 0x89, (byte) 0xab};
         for (int repeat = 0; repeat < 16; repeat++) {
             for (int j = 0; j < 6; j++) assertEquals(mac[j], packet[6 + repeat * 6 + j]);
+        }
+    }
+
+    @Test public void sendsPacketOverUdp() throws Exception {
+        try (DatagramSocket receiver = new DatagramSocket(0, InetAddress.getLoopbackAddress())) {
+            receiver.setSoTimeout(2000);
+            Pc pc = new Pc("test", "Test", "01:23:45:67:89:AB", "127.0.0.1", receiver.getLocalPort());
+            WolSender.send(pc);
+            DatagramPacket received = new DatagramPacket(new byte[128], 128);
+            receiver.receive(received);
+            assertEquals(102, received.getLength());
+            byte[] expected = MagicPacket.create(pc.mac);
+            for (int i = 0; i < expected.length; i++) {
+                assertEquals(expected[i], received.getData()[i]);
+            }
         }
     }
 
