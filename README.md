@@ -19,3 +19,5 @@ JDK 17 と Android SDK 36 を用意し、以下を実行します。
 ```
 
 Windows では `gradlew.bat` を使います。開発方針・仕様・確認手順は [docs/README.md](docs/README.md) から参照してください。
+
+GitHub Actions の [Android ワークフロー](https://github.com/nobuhiro-mizuno/android-simple-wol/actions/workflows/android.yml) では単体テスト、Debug ビルド、Lint を実行し、検証用 APK を `wake-debug-apk` として保存します。
