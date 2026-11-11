@@ -27,3 +27,8 @@
 - 自動確認：GitHub Actions で単体テスト、Debug APK ビルド、Lint が成功。
 - エミュレーター確認：API 35 でアプリ起動と初回画面・編集画面の表示に成功。画像は [初回画面](screenshots/home.png) と [編集画面](screenshots/edit.png)。ウィジェットの配置・タップ操作は未確認。
 - 実機確認：Android 端末と家庭内 PC にアクセスできないため、上記 1〜7 の実機での結果は未確認。配布前に確認が必要。
+
+## 2026-11-12 の修正確認
+
+- 自動確認：[GitHub Actions](https://github.com/nobuhiro-mizuno/android-simple-wol/actions/runs/43046560845) で単体テスト（連続タップ状態管理を含む）、Debug ビルド、Lint、API 35 エミュレーター起動が成功。
+- 未確認：上記 8〜9 の端末画面上での表示。ランチャーの形状やテーマは端末・ホームアプリによって異なるため、実際の端末で確認する。
