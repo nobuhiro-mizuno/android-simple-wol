@@ -1,0 +1,11 @@
+<resources>
+    <color name="canvas">#F5F7F7</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="ink">#152328</color>
+    <color name="muted">#627277</color>
+    <color name="accent">#136F69</color>
+    <color name="accent_dark">#075D58</color>
+    <color name="accent_soft">#E4F3F0</color>
+    <color name="line">#DCE5E4</color>
+    <color name="danger">#B14440</color>
+</resources>
